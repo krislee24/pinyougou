@@ -9,8 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.pinyougou</groupId>
     <artifactId>pinyougou-sellergoods-interface</artifactId>
-
     <dependencies>
         <dependency>
             <groupId>com.pinyougou</groupId>
@@ -18,4 +18,6 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
+
+
 </project>
