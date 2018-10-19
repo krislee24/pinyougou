@@ -5,6 +5,7 @@ import com.pinyougou.pojo.TbBrand;
 import com.pinyougou.sellergoods.service.BrandService;
 
 import com.pinyougou.vo.PageResult;
+import com.pinyougou.vo.Result;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,5 +32,16 @@ public class BrandController {
     public PageResult findPage(@RequestParam(value = "page", defaultValue = "1") Integer page,
                                @RequestParam(value = "rows", defaultValue = "10") Integer rows) {
         return brandService.findPage(page, rows);
+    }
+
+    @PostMapping("/add")
+    public Result add(@RequestBody TbBrand brand){
+        try {
+            brandService.add(brand);
+            return Result.ok("新增成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return Result.fail("新增失败");
     }
 }
